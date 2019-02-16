@@ -1,0 +1,47 @@
+    1) XOR intre doua siruri de octeti
+    Se ia un octet din primul string si un octet din al doilea. Se face XOR
+intre cei doi octeti, iar rezultatul se pune in primul string.
+
+    2) Rolling XOR
+    Se ia fiecare octet din string si se pune pe stiva. Se scoate primul. Se
+scoate urmatorul, se face XOR intre cei doi octeti si se pune rezultatul in
+stringul initial. Se retine octetul curent si, la pasul urmator, se scoate
+alt octet, se face XOR intre cei doi octeti si se pune rezultatul in stringul
+initial. Se repeta pana cand se ajunge la prima valoare din string.
+
+    3) XOR intre doua siruri reprezentate prin caractere hexazecimale
+    Se iau cate 2 octeti (hexazecimal) si se calculeaza valorile lor in deci-
+mal. Pentru a forma octetul in baza 2, se inmulteste prima valoare cu 16 si se
+aduna cu prima. Rezultatul este pus in stringul initial. Lungimea stringului
+se injumatateste, astfel a doua jumatate va fi suprascrisa cu null terminator.
+    Acest proces se aplica pe primul string si pe cheie. Dupa conversie, se
+apeleaza functia de XOR de la primul exercitiu.
+
+    4) Decodificarea unui sir in reprezentare base 32
+    Se iau primele 8 litere din string, se convertesc din baza 32 in baza 10
+si se pun pe stiva. Deoarece sunt necesari 5 octeti, iar un registru are
+maximul 4, se vor folosi doua registre pentru a stoca bitii numerelor. In
+edx se vor memora primii 5, iar in cl ultimul. Se scoate primul numar si se
+pune in edx. Pentru urmatoarele 5 numere, se va shita edx cu 5 pozitii la
+stanga si va fi adaugat numarul respectiv. Astfel in edx vor fi 6 numere a
+cate 5 biti. Se va shifta edx cu 2 pozitii si se va adauga primii 2 biti din
+al saptelea numar. Restul de trei biti vor fi adaugati in cl. Registrul cl
+va fi shiftat cu 5 pozitii la stanga si i se va adauga ultimul numar. La 
+finalul pasului se scriu cele 2 registre.
+    Deoarece algoritmul converteste 8 caractere in 5, vor ramane caractere
+din sirul original printre sirurile decriptate. Se vor muta grupurile de cate
+5 pentru a fi unul in continuarea celuilalt si se va sterge restul sirului.
+
+    5) Bruteforce pe XOR cu cheie de un octet
+    Se iau toate cheile posibile intre 0xff si 0x00 si se face XOR intre
+aceasta si toti octetii din stringul original. Cand se gaseste cuvantul "force"
+in stringul decriptat, algoritmul se opreste si returneaza rezultatul si cheia.
+
+    6) Decriptarea unui cifru de substitutie
+    Pentru alegerea alfabetului de decriptare, am copiat textul din fisierul
+input.dat si l-am incarcat pe un site care calculeaza frecventa fiecarui ca-
+racter din string. Aftfel am inlocuit cele mai frecvente litere din limba
+engleza cu cele mai frecvente litere din textul introdus. Dupa multe ajustari,
+textul avea sens in limba engleza.
+    Algoritmul ia un caracter din string, il cauta in alfabet criptat si il
+inlocuieste cu caracterul din alfabetul englez.
