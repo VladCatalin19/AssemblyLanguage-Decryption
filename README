@@ -1,3 +1,9 @@
+-------------------------------------------------------------------------------
+Vlad Marius-Cătălin 325CD
+Anul II Semestrul I
+Tema1 Introducere în Organizarea Calculatoarelor și Limbaj de Asamblare
+-------------------------------------------------------------------------------
+
     1) XOR intre doua siruri de octeti
     Se ia un octet din primul string si un octet din al doilea. Se face XOR
 intre cei doi octeti, iar rezultatul se pune in primul string.
